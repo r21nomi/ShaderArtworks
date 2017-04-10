@@ -11,7 +11,7 @@ uniform vec2 resolution;
 void main( void ) {
 
 	vec2 st = gl_FragCoord.xy / resolution;
-	vec3 p3 = vec3(st.x, st.y, sin(time));
+	vec3 p3 = vec3(st.x - 0.5, st.y - 0.5, sin(time));
 	float color = 0.0;
 	
 	for(int i = 0; i < 4; i++){
