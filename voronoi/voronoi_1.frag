@@ -1,4 +1,4 @@
-// http://glslsandbox.com/e#40431.0
+// http://glslsandbox.com/e#40431.2
 // See https://thebookofshaders.com/12/?lan=jp
 
 #ifdef GL_ES
@@ -19,7 +19,7 @@ void main( void ) {
 	vec2 st = (gl_FragCoord.xy / resolution.xy );
 	st.x *= resolution.x / resolution.y;
 	
-	vec3 color;
+	vec3 color = vec3(0.0);
 	float m_dist = 1.0;
 	vec2 m_point;
 	
