@@ -53,12 +53,14 @@ float sceneDist(vec3 ray) {
 	float easing =  exposeInOut(fract(t));
 	float speed = (floor(t) + easing) * step;
 	
+	// Rotate each item.
 	repeatedRay1 = vec3(repeatedRay1.xy * rotate2d(speed), repeatedRay1.z);
 	repeatedRay2 = vec3(repeatedRay2.xy * rotate2d(speed), repeatedRay2.z);
 
 	float barDistance1 = barDist(repeatedRay1.xz , 0.15);
 	float barDistance2 = barDist(repeatedRay2.yz, 0.15);
 	
+	// Make multiple pole.
 	float result = max(barDistance1, barDistance2);
 	
 	return result;
