@@ -24,6 +24,7 @@ void main(void){
     uv.x *= resolution.x / resolution.y;
 
     vec3 color = vec3((uv.x * cos(time)) + (uv.y * sin(time)));
+    //color = vec3(1.0);
 
     fragColor = vec4(color, 1.0);
 }
