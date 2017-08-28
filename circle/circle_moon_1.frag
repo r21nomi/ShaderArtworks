@@ -1,3 +1,5 @@
+// http://glslsandbox.com/e#42205.4
+
 #ifdef GL_ES
 precision mediump float;
 #endif
