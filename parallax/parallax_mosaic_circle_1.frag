@@ -1,4 +1,4 @@
-// http://glslsandbox.com/e#42297.1
+// http://glslsandbox.com/e#42297.2
 
 #ifdef GL_ES
 precision mediump float;
@@ -16,7 +16,7 @@ float map(float value, float beforeMin, float beforeMax, float afterMin, float a
 void main( void ) {
 	vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
 	
-	float num = map(sin(time * 0.5),-1.0, 1.0, 6.0, 6.0);
+	float num = 2.0;
 	uv *= pow(num, 2.0);
 	uv = mod(uv, num);
 
@@ -26,7 +26,7 @@ void main( void ) {
 	uv -= num / 2.0;
 	for (int i = 0; i < 4; i++) {
 		uv.x -= depth * time * 0.01;
-		vec2 newUv = uv * num;
+		vec2 newUv = uv * 30.0;
 		newUv = fract(newUv);
 		newUv -= 0.5;
 		float circle = 1.0 - step(0.2 * depth, length(newUv));
