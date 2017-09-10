@@ -1,4 +1,4 @@
-// http://glslsandbox.com/e#42386.2
+// http://glslsandbox.com/e#42386.3
 
 #ifdef GL_ES
 precision mediump float;
@@ -48,7 +48,7 @@ void main( void ) {
 	uv -= 0.5;  // Move box axis to center.
 	
 	float speed = time * 0.35;
-	float angle = speed * 2.0 * PI * pow(floor(uv.x - 0.5), 50.0);
+	float angle = speed * 2.0 * PI;
 	float scale = 8.0;
 	vec3 cameraPosition = scale * vec3(cos(angle), 0.5, -sin(angle));
 	vec3 ray = camera(cameraPosition, vec3(0.0, 0.0, 0.0)) * normalize(vec3(uv, 2.0));  // Rotate box.
