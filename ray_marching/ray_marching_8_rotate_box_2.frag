@@ -1,4 +1,4 @@
-// http://glslsandbox.com/e#42388.1
+// http://glslsandbox.com/e#42388.2
 
 #ifdef GL_ES
 precision mediump float;
@@ -98,7 +98,7 @@ void main( void ) {
 		color = vec3(1.0, 0.0, sin(uv.x)) * diff ;
 		
 	} else {
-		color = vec3(0.1);
+		color = vec3(0.5, 0.6, smoothstep(0.1, 0.5, length(uv - 0.5)));
 	}
 	
 	gl_FragColor = vec4(color, 1.0);
