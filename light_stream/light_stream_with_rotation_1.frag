@@ -1,4 +1,4 @@
-// http://glslsandbox.com/e#42690.5
+// http://glslsandbox.com/e#42690.6
 // Forked from http://glslsandbox.com/e#42597.0
 
 #ifdef GL_ES
@@ -37,7 +37,8 @@ void main( void ) {
 	float lightsCountOffset = 0.3;
 	float adist = randomAngle / distanceFromCenter * lightsCountOffset;
 	float dist = t + adist;
-	dist = abs(fract(dist) - 1.0);  // repeat.
+	float meteorDirection = (direction < 0.0) ? -1.0 : 0.0;
+	dist = abs(fract(dist) + meteorDirection);  // repeat.
 	
 	float lightLength = 100.0;
 	float meteor = (1.0 / dist) * cos(sin(speed)) / lightLength;  // cos(sin(speed)) make endless.
