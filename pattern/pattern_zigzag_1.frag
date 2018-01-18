@@ -1,3 +1,6 @@
+// http://glslsandbox.com/e#44793.1
+// https://thebookofshaders.com/edit.php#09/zigzag.frag
+
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -41,7 +44,8 @@ void main( void ) {
 
 	float vv = elasticOut(map(abs(sin(time * 0.5)), 0.0, 1.0, 0.0, 1.0));
 	vec2 s = vec2(vv, 1.0);
-	vec2 tile = mirrorTile(uv * s, 5.0);
+	float zoom = 5.0;
+	vec2 tile = mirrorTile(uv * s, zoom);
 	
 	float x = tile.x * 2.0;
 	float a = floor(1.0 + sin(x * PI));
@@ -49,7 +53,7 @@ void main( void ) {
 	float f = fract(x);
 	
 	float v = fillY(tile, mix(a, b, f), 0.01);
-	vec3 color = vec3(v, v * 0.5, v * fract(uv.y));
+	vec3 color = vec3(v, v * 0.5, v);
 
 	gl_FragColor = vec4(color, 1.0);
 }
