@@ -1,3 +1,5 @@
+// https://www.vertexshaderart.com/art/QgXakG4wfDMZ4Au6n
+
 float VERTEX_COUNT_FOR_SURFACE = 6.0;
 float SURFACE_COUNT_FOR_CUBE = 6.0;
 float VERTEX_COUNT_FOR_CUBE = VERTEX_COUNT_FOR_SURFACE * SURFACE_COUNT_FOR_CUBE;  // 36
