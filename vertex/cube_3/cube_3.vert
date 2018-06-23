@@ -1,4 +1,4 @@
-// https://www.vertexshaderart.com/art/QgXakG4wfDMZ4Au6n
+// https://www.vertexshaderart.com/art/QgXakG4wfDMZ4Au6n/revision/y8NWriBsxmG8Kis8M
 
 float VERTEX_COUNT_FOR_SURFACE = 6.0;
 float SURFACE_COUNT_FOR_CUBE = 6.0;
